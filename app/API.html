@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+<h2>Nodos</h2>
+<p></p>
+<ol>
+ <li>
+  <p><span style="font-size: 13.3333330154419px;">En tanto que admin puede eliminar eventos para mantener una lista de eventos actualizada.</span></p>
+  <ul>
+   <li>URL: '/nodos/ABorrarEvento'</li>
+   <li>Método: GET</li><li>Formato de salida: JSON</li>
+   <li>Roles: admin </li>
+   <li>Requisitos: No disponible
+   <li>
+    <p><strong>Cursos posibles</strong></p>
+    <ol>
+     <li>
+<p>Precondición: Datos del evento válidos.</p>
+<p>Postcondicion: Evento eliminado.</p>
+      <p>resultado:</p>
+      <ul>
+       <li>label:'/VEventos',</li>
+       <li> msg:"Evento borrado".</li>
+      </ul>
+     </li>
+     <li>
+<p>Precondición: Datos del evento inválidos.</p>
+<p>Postcondicion: No ocurre nada.</p>
+      <p>resultado:</p>
+      <ul>
+       <li>label:'/VEvento',</li>
+       <li> msg:"Error al borrar evento".</li>
+      </ul>
+     </li>
+
+    </ol>
+   </li>
+  </ul>
+ </li> <li>
+  <p></p>
+  <ul>
+   <li>URL: '/nodos/VEventos'</li>
+   <li>Método: GET</li><li>Formato de salida: JSON</li>
+   <li>Roles: usuario </li>
+  </ul>
+ </li> <li>
+  <p><span style="font-size: 13.3333330154419px;">En tanto que admin puede crear eventos para mantener una lista de eventos actualizada.</span></p>
+  <ul>
+   <li>URL: '/nodos/ACrearEvento'</li>
+   <li>Método: POST</li><li>Formato de entrada y salida: JSON</li>
+<li>Parámetros POST:
+    <ul>     <li>nombre -  
+Requerido. 
+     </li>     <li>descripcion -  
+Opcional. 
+     </li>     <li>fecha -  
+Requerido. 
+     </li>     <li>lugar -  
+Requerido. 
+     </li>     <li>capacidad -  
+Requerido. 
+     </li>     <li>afiche -  
+Opcional. 
+     </li>
+    </ul>
+   </li>
+   <li>Roles: admin </li>
+   <li>Requisitos: No disponible
+   <li>
+    <p><strong>Cursos posibles</strong></p>
+    <ol>
+     <li>
+<p>Precondición: Datos de evento válidos.</p>
+<p>Postcondicion: Evento creado exitosamente.</p>
+      <p>resultado:</p>
+      <ul>
+       <li>label:'/VEventos',</li>
+       <li> msg:"Evento creado".</li>
+      </ul>
+     </li>
+     <li>
+<p>Precondición: Datos de evento inválidos.</p>
+<p>Postcondicion: No ocurre nada.</p>
+      <p>resultado:</p>
+      <ul>
+       <li>label:'/VCrearEvento',</li>
+       <li> msg:"Error al crear evento".</li>
+      </ul>
+     </li>
+
+    </ol>
+   </li>
+  </ul>
+ </li> <li>
+  <p></p>
+  <ul>
+   <li>URL: '/nodos/VActEvento'</li>
+   <li>Método: GET</li><li>Formato de salida: JSON</li>
+Parámetros GET: id
+   <li>Roles: admin </li>
+  </ul>
+ </li> <li>
+  <p><span style="font-size: 13.3333330154419px;">En tanto que cualquier persona puede registrarse como usuario para utilizar la aplicación.</span></p>
+  <ul>
+   <li>URL: '/nodos/ARegistrarUsuario'</li>
+   <li>Método: POST</li><li>Formato de entrada y salida: JSON</li>
+<li>Parámetros POST:
+    <ul>     <li>username -  
+Requerido. 
+Long. mínima: <code>4</code>. 
+Long. máxima: <code>20</code>. 
+     </li>     <li>password -  
+Requerido. 
+Long. mínima: <code>6</code>. 
+Long. máxima: <code>10</code>. 
+     </li>     <li>nombre -  
+Requerido. 
+     </li>     <li>apellido -  
+Requerido. 
+     </li>     <li>email -  
+Requerido. 
+     </li>     <li>isAdmin -  
+Requerido. 
+     </li>
+    </ul>
+   </li>
+   <li>Roles: usuario </li>
+   <li>Requisitos: No disponible
+   <li>
+    <p><strong>Cursos posibles</strong></p>
+    <ol>
+     <li>
+<p>Precondición: Datos del usuario válidos.</p>
+<p>Postcondicion: Usuario registrado exitosamente.</p>
+      <p>resultado:</p>
+      <ul>
+       <li>label:'/VInicioSesion',</li>
+       <li> msg:"Usuario registrado".</li>
+      </ul>
+     </li>
+     <li>
+<p>Precondición: Datos del usuario inválidos.</p>
+<p>Postcondicion: No ocurre nada.</p>
+      <p>resultado:</p>
+      <ul>
+       <li>label:'/VRegistroUsuario',</li>
+       <li> msg:"Error al registrar usuario".</li>
+      </ul>
+     </li>
+
+    </ol>
+   </li>
+  </ul>
+ </li> <li>
+  <p></p>
+  <ul>
+   <li>URL: '/nodos/VCrearEvento'</li>
+   <li>Método: GET</li><li>Formato de salida: JSON</li>
+   <li>Roles: admin </li>
+  </ul>
+ </li> <li>
+  <p><span style="font-size: 13.3333330154419px;">En tanto que cualquier persona registrada puede iniciar sesión como usuario para utilizar la aplicación.</span></p>
+  <ul>
+   <li>URL: '/nodos/AIniciarSesion'</li>
+   <li>Método: POST</li><li>Formato de entrada y salida: JSON</li>
+<li>Parámetros POST:
+    <ul>     <li>username -  
+Requerido. 
+Long. mínima: <code>4</code>. 
+Long. máxima: <code>20</code>. 
+     </li>     <li>password -  
+Requerido. 
+Long. mínima: <code>6</code>. 
+Long. máxima: <code>10</code>. 
+     </li>
+    </ul>
+   </li>
+   <li>Roles: Sin restricción de rol
+   <li>Requisitos: No disponible
+   <li>
+    <p><strong>Cursos posibles</strong></p>
+    <ol>
+     <li>
+<p>Precondición: Usuario válido.</p>
+<p>Postcondicion: Sesión iniciada.</p>
+      <p>resultado:</p>
+      <ul>
+       <li>label:'/VEventos',</li>
+       <li> msg:"Sesión iniciada".</li>
+      </ul>
+<p>Se continúa con el rol de usuario.</p>
+     </li>
+     <li>
+<p>Precondición: Error en datos ingresados.</p>
+<p>Postcondicion: No pasa nada.</p>
+      <p>resultado:</p>
+      <ul>
+       <li>label:'/VInicioSesion',</li>
+       <li> msg:"Error al iniciar sesión".</li>
+      </ul>
+     </li>
+
+    </ol>
+   </li>
+  </ul>
+ </li> <li>
+  <p></p>
+  <ul>
+   <li>URL: '/nodos/VParticipante'</li>
+   <li>Método: GET</li><li>Formato de salida: JSON</li>
+Parámetros GET: id
+   <li>Roles: usuario </li>
+  </ul>
+ </li> <li>
+  <p><span style="font-size: 13.3333330154419px;">En tanto que usuario puede reservar eventos para asegurar un puesto en el mismo y confirmar su asistencia.</span></p>
+  <ul>
+   <li>URL: '/nodos/AReservarEvento'</li>
+   <li>Método: GET</li><li>Formato de salida: JSON</li>
+   <li>Roles: usuario </li>
+   <li>Requisitos: No disponible
+   <li>
+    <p><strong>Cursos posibles</strong></p>
+    <ol>
+     <li>
+<p>Precondición: El evento tiene capacidad disponible.</p>
+<p>Postcondicion: El evento es reservado exitosamente.</p>
+      <p>resultado:</p>
+      <ul>
+       <li>label:'/VEvento',</li>
+       <li> msg:"Evento reservado exitosamente".</li>
+      </ul>
+     </li>
+     <li>
+<p>Precondición: El evento no tiene capacidad disponible.</p>
+<p>Postcondicion: No ocurre nada.</p>
+      <p>resultado:</p>
+      <ul>
+       <li>label:'/VEvento',</li>
+       <li> msg:"Error al reservar evento".</li>
+      </ul>
+     </li>
+
+    </ol>
+   </li>
+  </ul>
+ </li> <li>
+  <p></p>
+  <ul>
+   <li>URL: '/nodos/VParticipantes'</li>
+   <li>Método: GET</li><li>Formato de salida: JSON</li>
+   <li>Roles: admin </li>
+  </ul>
+ </li> <li>
+  <p><span style="font-size: 13.3333330154419px;">En tanto que usuario puede cerrar su sesión para salir de la aplicación y proteger su cuenta.</span></p>
+  <ul>
+   <li>URL: '/nodos/ACerrarSesion'</li>
+   <li>Método: GET</li><li>Formato de salida: JSON</li>
+   <li>Roles: usuario </li>
+   <li>Requisitos: No disponible
+   <li>
+    <p><strong>Cursos posibles</strong></p>
+    <ol>
+     <li>
+<p>Precondición: Usuario con sesión iniciada.</p>
+<p>Postcondicion: Se pierde la sesión del usuario.</p>
+      <p>resultado:</p>
+      <ul>
+       <li>label:'/VInicioSesion',</li>
+       <li> msg:"Sesión cerrada".</li>
+      </ul>
+<p>Se continúa sin rol específico.</p>
+     </li>
+
+    </ol>
+   </li>
+  </ul>
+ </li> <li>
+  <p></p>
+  <ul>
+   <li>URL: '/nodos/VActUsuario'</li>
+   <li>Método: GET</li><li>Formato de salida: JSON</li>
+Parámetros GET: id
+   <li>Roles: usuario </li>
+  </ul>
+ </li> <li>
+  <p>En tanto que un usuario puede cancelar una reserva de evento para liberar el puesto que no ocupará.</p>
+  <ul>
+   <li>URL: '/nodos/ACancelarReserva'</li>
+   <li>Método: GET</li><li>Formato de salida: JSON</li>
+   <li>Roles: usuario </li>
+   <li>Requisitos: No disponible
+   <li>
+    <p><strong>Cursos posibles</strong></p>
+    <ol>
+     <li>
+<p>Precondición: El usuario reservó el evento.</p>
+<p>Postcondicion: Reservación cancelada exitosamente.</p>
+      <p>resultado:</p>
+      <ul>
+       <li>label:'/VEvento',</li>
+       <li> msg:"Reservación cancelada exitosamente".</li>
+      </ul>
+     </li>
+     <li>
+<p>Precondición: Ocurre un error al cancelar la reservación.</p>
+<p>Postcondicion: No ocurre nada.</p>
+      <p>resultado:</p>
+      <ul>
+       <li>label:'/VEvento',</li>
+       <li> msg:"Error al cancelar la reservación".</li>
+      </ul>
+     </li>
+
+    </ol>
+   </li>
+  </ul>
+ </li> <li>
+  <p></p>
+  <ul>
+   <li>URL: '/nodos/VRegistroUsuario'</li>
+   <li>Método: GET</li><li>Formato de salida: JSON</li>
+   <li>Roles: Sin restricción de rol
+  </ul>
+ </li> <li>
+  <p>En tanto que un admin puede verificar la asistencia de un usuario a un evento para otorgarle su certificado.</p>
+  <ul>
+   <li>URL: '/nodos/AVerificarAsistencia'</li>
+   <li>Método: GET</li><li>Formato de salida: JSON</li>
+   <li>Roles: admin </li>
+   <li>Requisitos: No disponible
+   <li>
+    <p><strong>Cursos posibles</strong></p>
+    <ol>
+     <li>
+<p>Precondición: El admin confirma que el participante asistió al evento.</p>
+<p>Postcondicion: La asistencia del participante al evento es verificada exitosamente.</p>
+      <p>resultado:</p>
+      <ul>
+       <li>label:'/VParticipantes',</li>
+       <li> msg:"Asistencia verificada exitosamente".</li>
+      </ul>
+     </li>
+     <li>
+<p>Precondición: El admin indica que el participante no asistió al evento.</p>
+<p>Postcondicion: No ocurre nada.</p>
+      <p>resultado:</p>
+      <ul>
+       <li>label:'/VParticipantes',</li>
+       <li> msg:"Error al verificar asistencia".</li>
+      </ul>
+     </li>
+
+    </ol>
+   </li>
+  </ul>
+ </li> <li>
+  <p></p>
+  <ul>
+   <li>URL: '/nodos/VInicioSesion'</li>
+   <li>Método: GET</li><li>Formato de salida: JSON</li>
+   <li>Roles: Sin restricción de rol
+  </ul>
+ </li> <li>
+  <p>En tanto que un participante puede generar un certificado para tener constancia de su asistencia a un evento.</p>
+  <ul>
+   <li>URL: '/nodos/AGenerarCertificado'</li>
+   <li>Método: GET</li><li>Formato de salida: JSON</li>
+   <li>Roles: usuario </li>
+   <li>Requisitos: No disponible
+   <li>
+    <p><strong>Cursos posibles</strong></p>
+    <ol>
+     <li>
+<p>Precondición: La asistencia del usuario al evento está verificada.</p>
+<p>Postcondicion: El certificado es generado exitosamente.</p>
+      <p>resultado:</p>
+      <ul>
+       <li>label:'/VCertificado',</li>
+       <li> msg:"Certificado generado exitosamente".</li>
+      </ul>
+     </li>
+     <li>
+<p>Precondición: No se logra verificar la asistencia del usuario al evento.</p>
+<p>Postcondicion: No ocurre nada.</p>
+      <p>resultado:</p>
+      <ul>
+       <li>label:'/VEvento',</li>
+       <li> msg:"Error al generar certificado".</li>
+      </ul>
+     </li>
+
+    </ol>
+   </li>
+  </ul>
+ </li> <li>
+  <p></p>
+  <ul>
+   <li>URL: '/nodos/VEvento'</li>
+   <li>Método: GET</li><li>Formato de salida: JSON</li>
+Parámetros GET: id
+   <li>Roles: Sin restricción de rol
+  </ul>
+ </li> <li>
+  <p>En tanto que un usuario puede generar sus credenciales para ingresar a algún evento.</p>
+  <ul>
+   <li>URL: '/nodos/AGenerarCredenciales'</li>
+   <li>Método: GET</li><li>Formato de salida: JSON</li>
+   <li>Roles: usuario </li>
+   <li>Requisitos: No disponible
+   <li>
+    <p><strong>Cursos posibles</strong></p>
+    <ol>
+     <li>
+<p>Precondición: Se verifican los credenciales del usuario.</p>
+<p>Postcondicion: Se generan los credenciales del usuario.</p>
+      <p>resultado:</p>
+      <ul>
+       <li>label:'/VCredenciales',</li>
+       <li> msg:"Credenciales generados exitosamente".</li>
+      </ul>
+     </li>
+     <li>
+<p>Precondición: No se logran verificar los credenciales.</p>
+<p>Postcondicion: No ocurre nada.</p>
+      <p>resultado:</p>
+      <ul>
+       <li>label:'/VEvento',</li>
+       <li> msg:"Error al generar credenciales".</li>
+      </ul>
+     </li>
+
+    </ol>
+   </li>
+  </ul>
+ </li> <li>
+  <p></p>
+  <ul>
+   <li>URL: '/nodos/VCertificado'</li>
+   <li>Método: GET</li><li>Formato de salida: JSON</li>
+   <li>Roles: Sin restricción de rol
+  </ul>
+ </li> <li>
+  <p></p>
+  <ul>
+   <li>URL: '/nodos/VCredenciales'</li>
+   <li>Método: GET</li><li>Formato de salida: JSON</li>
+   <li>Roles: Sin restricción de rol
+  </ul>
+ </li>
+</ol>
+
+</html>

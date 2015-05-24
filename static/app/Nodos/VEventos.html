@@ -1,0 +1,43 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" 
+                    data-toggle="collapse" 
+                    data-target="#contenido-plegable">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <span class="navbar-brand" ></span>
+        </div>
+        <div class="collapse navbar-collapse" id="contenido-plegable">
+            <ul class="nav navbar-nav navbar-left">
+                <li><a ng-click="ACerrarSesion2()"
+                       ng-show="actor=='usuario' || false">
+                    Cerrar sesión</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="navbar-text" ng-show="usuario.nombre" ng-bind="usuario.nombre"></li>
+                <li><a ng-click="__ayuda()"><span class="glyphicon glyphicon-info-sign"></span></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+HOLA
+
+        <table ng-table="tableParams0" template-pagination="pager.html" class="table">
+            <tr ng-repeat="row in $data">
+                <td data-title="'Nombre'">{{row['nombre']}}</td>
+                <td data-title="'Lugar'">{{row['lugar']}}</td>
+                <td data-title="'Fecha'">{{row['fecha']}}</td>
+                <td><a ng-click="VEvento0(row['nombre'])">Detalles</a></td>
+            </tr>
+        </table>
+
+<hr />
+
+
+<div id="right"></div><script type="text/ng-template" id="ayuda_VEventos.html">
+En tanto que un usuario puede ver la lista de eventos para saber que existen.
+</script>

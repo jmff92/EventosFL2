@@ -1,0 +1,50 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" 
+                    data-toggle="collapse" 
+                    data-target="#contenido-plegable">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <span class="navbar-brand" ></span>
+        </div>
+        <div class="collapse navbar-collapse" id="contenido-plegable">
+            <ul class="nav navbar-nav navbar-left">
+<li><a ng-click="VActEvento0(id)"
+       ng-show="actor=='admin' || false">
+  Actualizar evento</a></li>
+<li><a ng-click="ABorrarEvento1()"
+       ng-show="actor=='admin' || false">
+  Borrar evento</a></li>
+<li><a ng-click="VParticipantes2()"
+       ng-show="actor=='admin' || false">
+  Listar participantes</a></li>
+<li><a ng-click="AReservarEvento3()"
+       ng-show="actor=='usuario' || false">
+  Reservar evento</a></li>
+<li><a ng-click="ACancelarReserva4()"
+       ng-show="actor=='usuario' || false">
+  Cancelar reserva de evento</a></li>
+<li><a ng-click="AGenerarCertificado5()"
+       ng-show="actor=='usuario' || false">
+  Generar certificado</a></li>
+<li><a ng-click="AGenerarCredenciales6()"
+       ng-show="actor=='usuario' || false">
+  Generar credenciales</a></li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+<li class="navbar-text" ng-show="usuario.nombre" ng-bind="usuario.nombre"></li>
+<li><a ng-click="__ayuda()"><span class="glyphicon glyphicon-info-sign"></span></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+<div id="right"></div><script type="text/ng-template" id="ayuda_VEvento.html">
+<span style="font-size: 13.3333330154419px;">En tanto que un usuario puede ver un evento para obtener más información sobre el mismo.</span>
+</script>
